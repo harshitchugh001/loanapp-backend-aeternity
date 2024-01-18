@@ -3,8 +3,12 @@
 const mongoose = require('mongoose');
 
 
-const SendtMoneySchema = new mongoose.Schema({
-  address: {
+const SendMoneySchema = new mongoose.Schema({
+  senderaddress: {
+    type: String,
+    required: true,
+  },
+  receiveraddress: {
     type: String,
     required: true,
   },
@@ -12,7 +16,7 @@ const SendtMoneySchema = new mongoose.Schema({
     type: Number,
     required: true,
   },
-  message: {
+  transactionId: {
     type: String,
     required: true,
   },

@@ -21,7 +21,7 @@ mongoose.connection.on("error", err => {
 });
 
 const requestmoneyRoutes = require('./routes/requestmoney');
-
+const sendmoneyRoutes = require('./routes/sendmoney');
 
 // app middlewares
 app.use(morgan('dev'));
@@ -35,6 +35,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api', requestmoneyRoutes);
+app.use('/api', sendmoneyRoutes);
 
 
 
