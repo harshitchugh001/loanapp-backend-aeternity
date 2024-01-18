@@ -14,7 +14,13 @@ exports.addDetail=async (req,res)=>{
     return res.status(201).json({ message: 'Added successfully.' });
 }
 
-exports.getDetail=async (req,res)=>{
-   
-}
+exports.getDetail = async (req, res) => {
+    try {
+      const allDetails = await RequestMoney.find({});
+      return res.status(200).json({ details: allDetails });
+    } catch (error) {
+      console.error('Error fetching details:', error);
+      return res.status(500).json({ error: 'Internal Server Error.' });
+    }
+  };
 

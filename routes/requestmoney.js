@@ -3,6 +3,7 @@ const router = express.Router();
 
 const {
     addDetail,
+    getDetail
     
 } = require('../controllers/requestmoney');
 
